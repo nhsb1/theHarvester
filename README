@@ -1,27 +1,28 @@
-*******************************************************************
-*                                                                 *
-* | |_| |__   ___    /\  /\__ _ _ ____   _____  ___| |_ ___ _ __  *
-* | __| '_ \ / _ \  / /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__| *
-* | |_| | | |  __/ / __  / (_| | |   \ V /  __/\__ \ ||  __/ |    *
-*  \__|_| |_|\___| \/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|    *
-*                                                                 *
-* TheHarvester Ver. 2.6                                          *
-* Coded by Christian Martorella                                   *
-* Edge-Security Research                                          *
-* cmartorella@edge-security.com                                   *
-*******************************************************************
+***************************************************************************
+*                                                                         *
+*  ___ _ __ ___   __ _(_) | /\  /\__ _ _ ____   _____  ___| |_ ___ _ __   * 
+* / _ \ '_ ` _ \ / _` | | |/ /_/ / _` | '__\ \ / / _ \/ __| __/ _ \ '__|  *
+*|  __/ | | | | | (_| | | / __  / (_| | |   \ V /  __/\__ \ ||  __/ |     *
+*\___|_| |_| |_|\__,_|_|_\/ /_/ \__,_|_|    \_/ \___||___/\__\___|_|      *
+*                                                                         *
+emailHarvester Ver. 0.7 (forked from theHarvester ver. 2.6)               *
+Only designed to work with '-b all' option                                *
+Example usage: emailHarvester.py -d domains.txt -b all                    *
+Changes:                                                                  *
+Takes a list of domains (-d domains.txt) as input                         *
+Produces a list of email address (only) as output                         *
+Other functionality from source project might not function anymore        *
+***************************************************************************
 
 What is this?
 -------------
 
-theHarvester is a tool for gathering e-mail accounts, subdomain names, virtual
-hosts, open ports/ banners, and employee names from different public sources
-(search engines, pgp key servers).
+emailHarvester is a tool for gathering e-mail address from different public sources (Google, Bing, pgp key servers, exaleadsearch).
+I modified theHarvester 2.6 so that it would take a text file as input, and loop through the "-b all" functionality, and produce
+only a list of email addresses, suitable for export to a spreadsheet or other source.  
 
-Is a really simple tool, but very effective for the early stages of a penetration
-test or just to know the visibility of your company in the Internet.
-
-The sources are:
+Basically, unless you're using it like so: "emailHarvester.py -d domains.txt -b all" where you're specifying a list of domains in 
+file, existing functionality from theHarvester might be (is) broken.    
 
 Passive:
 --------
@@ -75,27 +76,5 @@ Dependencies:
 `pip install requests`
 
 
-Changelog in 2.6:
-------------------
--Added Yahoo and Baidu search engines. Thanks to Tatanus
--Added check for the existence of Requests library.
--Fixed email regex to provide cleaner results. Thanks to Peter McAlpine
-
-Changelog in 2.5:
------------------
--Replaced httplib by Requests http library (for Google related)
--Fixed Google searches
-
-
-Comments? Bugs? Requests?
-------------------------
-cmartorella@edge-security.com
-
-Updates:
---------
-https://github.com/laramies/theHarvester
-
-Thanks:
--------
-John Matherly -  SHODAN project
-Lee Baird for suggestions and bugs reporting
+Changelog in 0.7
+-Take an input file
