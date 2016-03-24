@@ -84,7 +84,7 @@ class search_bing:
                 self.do_search()
                 time.sleep(1)
             self.counter += 50
-            print "\tSearching " + str(self.counter) + " results..."
+            #print "\tSearching " + str(self.counter) + " results..."
 
     def process_vhost(self):
         # Maybe it is good to use other limit for this.
