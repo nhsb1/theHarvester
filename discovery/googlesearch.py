@@ -66,7 +66,7 @@ class search_google:
             self.do_search()
             #more = self.check_next()
             time.sleep(1)
-            print "\tSearching " + str(self.counter) + " results..."
+            #print "\tSearching " + str(self.counter) + " results..."
             self.counter += 100
 
             
