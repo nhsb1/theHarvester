@@ -116,7 +116,7 @@ def start(argv):
             else:
                 pass
     
-     with open(word) as activefile:
+    with open(word) as activefile:
         activedomain = activefile.read().splitlines() #removes \n from lines when reading file
         activefile.close
     print activedomain
